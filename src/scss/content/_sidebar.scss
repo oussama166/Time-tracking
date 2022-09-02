@@ -1,0 +1,71 @@
+.nav {
+  width: 26%;
+  height: 70vh;
+  background: $neutral-dark-blue;
+  border-radius: 1.5625em;
+  @include Flex(column, space-between, center);
+  @include respond-to(small){
+    width: 100%;
+  }
+  .navUper {
+    width: 90%;
+    height: 60%;
+    border-radius: 1.5625em;
+    background-color: $blue;
+    padding: 1.25em 0em 1.875em 1.25em;
+    @include respond-to(small){
+      width: 96%;
+      @include Flex(row, space-around, center);
+    }
+    .photo {
+      display: block;
+      img {
+        width: 6em;
+        height: 6em;
+        border-radius: 50%;
+        border: 0.2em solid white;
+        margin: 0;
+      }
+    }
+    .body {
+      h1 {
+        font-size: 2.1em; 
+        font-weight: 300;
+        letter-spacing: 0.09375em;
+        line-height: 1.2em;
+        span {
+          display: block;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 1.6em;
+          font-size: 0.4em;
+          letter-spacing: 0.133125em;
+          color : $neutral-pale-blue;
+        }
+      }
+    }
+  }
+  .navmain {
+    width: 93%;
+    ul {
+      padding-inline-start: 20px;
+      padding-block: 10px;
+      @include respond-to(small){
+        @include Flex(row, space-between, center);
+      }
+      li {
+        padding-block: 10px;
+        font-weight: 300;
+        span {
+          cursor: pointer;
+          color: $neutral-desaturated-blue;
+          transition: color 0.2s ease-in;
+          &:hover , &.active{
+            color: white;
+            transition: color 0.2s ease-out;
+          }
+        }
+      }
+    }
+  }
+}

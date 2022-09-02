@@ -1,0 +1,29 @@
+@import "variables";
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&");
+@import "mixins";
+body {
+  font-family: "Rubik", sans-serif;
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  font-size: 1em;
+  background-color: $neutral-very-dark-blue;
+  color: white;
+  @include Flex(column, center, end);
+  line-height: 1;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

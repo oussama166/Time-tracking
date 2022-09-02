@@ -1,0 +1,106 @@
+.cards {
+  width: 100%;
+  height: 100%;
+  @include Flex(row, flex-start, end);
+  @include respond-to(small){
+    @include Flex(row, center, center);
+    gap : 3.4em;
+  }
+  gap: 2em;
+  flex-wrap: wrap;
+  .card {
+    @include respond-to(small){
+      width: 100%;
+      @include Flex(row, center, center);
+    }
+    width: $width-card;
+    display: flex;
+    height: 11em;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 25px;
+    position: relative;
+    .illu {
+      @include respond-to(small){
+        width : 100%;
+      }
+      width: calc($width-card + 10px);
+      height: 5em;
+      position: absolute;
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
+      top: -21%;
+      left: 0;
+      overflow: hidden;
+      z-index: -1;
+      img {
+        @include respond-to(small){
+          margin-left: 83%;
+          margin-top: -5px;
+        }
+        margin-left: 9em;
+        margin-top: -5px;
+        width: 70px;
+        height: 75px;
+      }
+    }
+    .info {
+      width: 100%;
+      height: 90%;
+      padding-left: 10px;
+      border-radius: 25px;
+      background-color: $neutral-dark-blue;
+      padding-block-start: 10px;
+      transition: background-color 0.5s ease-out;
+      cursor: pointer;
+      &:hover {
+        background-color: $neutral-desaturated-blue-hover;
+        transition: background-color 0.2s ease-in;
+      }
+      .uper {
+        @include Flex(row, space-between, center);
+        width: 85%;
+        padding-inline: 10px;
+        h2 {
+          font-size: 0.9em;
+          font-weight: 500;
+          text-transform: capitalize;
+          line-height: 1.1;
+        }
+        .more {
+          @include Flex(row, center, center);
+          width: 25px;
+          height: 25px;
+          cursor: pointer;
+          &:hover > span {
+            background-color: whitesmoke;
+            transition: background-color 0.2s ease-in;
+          }
+          span {
+            width: 5px;
+            height: 5px;
+            background-color: $neutral-pale-blue;
+            margin-left: 2px;
+            border-radius: 50%;
+            transition: background-color 0.2s ease-in;
+          }
+        }
+      }
+      .footer {
+        padding-left: 15px;
+        h1 {
+          padding-left : 5px;
+          font-size: 3em;
+          font-weight: 100;
+          line-height: 0.1;
+        }
+        h5{
+          font-size: 0.8em;
+          font-weight: 100;
+          line-height: 0.1;
+          color : $neutral-pale-blue;
+        }
+      }
+    }
+  }
+}
